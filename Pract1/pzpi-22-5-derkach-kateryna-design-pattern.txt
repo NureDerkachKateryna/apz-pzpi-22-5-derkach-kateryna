@@ -1,0 +1,282 @@
+Міністерство освіти та науки України
+Харківський національний університет радіоелектроніки
+
+
+
+
+
+Практична робота №1
+з дисципліни: «Аналіз програмного забезпечення»
+
+
+
+
+
+
+
+
+
+
+                                       Виконала
+                                       ст. гр. ПЗПІ-22-5
+                                       Деркач Катерина Юріївна
+                                       
+                                       Перевірив 
+                                       ст. викл. Сокорчук І. П.
+                                       
+
+
+
+Харків 2025
+     1 ІСТОРІЯ ЗМІН
+
+№
+Дата
+Версія звіту
+Опис змін та виправлень
+
+23.03.2025
+0.1
+Створено розділи «Завдання», «Опис виконаної роботи» та «Висновки»
+
+24.03.2025
+0.2
+Створено «Додаток Б» та «Додаток В»
+
+25.03.2025
+0.3
+Створено «Додаток А»
+     
+
+
+     2 ЗАВДАННЯ
+     
+     1. Підготувати доповідь на тему: «Шаблон проєктування ПЗ «Будівельник».
+     2. Створити та оформити слайди презентації доповіді.
+     3. Створити та опублікувати на YouTube відеозапис доповіді.
+
+
+     3 ОПИС ВИКОНАНОЇ РОБОТИ
+     
+     1. Було створено доповідь на тему: «Шаблон проєктування ПЗ «Будівельник».
+     2. Було написано код для демонстрування ефективності шаблону «Будівельник» (див. Додаток В).
+     3. Було створено та оформлено слайди презентації доповіді (див. Додаток Б).
+     4. Було створено та опублікувано на YouTube відеозапис доповіді (див. Додаток А).
+
+
+     4 ВИСНОВКИ
+     
+     В результаті виконання практичного завдання було досліджено призначення, принципи та переваги використання шаблонів проєктування для створення гнучкого й масштабованого програмного забезпечення.
+     
+
+     ДОДАТОК А
+     Відеозапис доповіді на YouTube: https://youtu.be/Cdv3vPwl9rg.
+     Хронологія відео:
+     00:00 Вступ.
+     00:22 Мета.
+     00:35 Пояснення терміну «Шаблон проєктування».
+     00:51 Суть шаблону «Будівельник».
+     01:08 Структура шаблону «Будівельник».
+     01:47 Правила застосування шаблону.
+     02:37 Переваги та недоліки «Будівельника».
+     03:11 Застосування шаблону на практиці. 
+     03:40 Приклад неправильного коду.
+     04:00 Приклад правильного коду.
+     05:11 Висновок.
+
+
+     ДОДАТОК Б
+     Слайди презентації
+     
+
+Рисунок Б.1 – Назва презентації
+
+
+Рисунок Б.2 – Мета створення презентації
+
+Рисунок Б.3 – Пояснення терміну «шаблон проєктування»
+
+
+Рисунок Б.4 – Пояснення шаблону «Будівельник»
+
+
+Рисунок Б.5 – Структура шаблону «Будівельник»
+
+
+Рисунок Б.6 – Правила застосування шаблону
+
+
+Рисунок Б.7 – Переваги та недоліки «Будівельника»
+
+
+Рисунок Б.8 – Приклад коду, класи Character та CharacterManual
+
+
+Рисунок Б.9 – Приклад неправильного коду, метод Main
+
+
+Рисунок Б.10 – Приклад використання шаблону «Будівельник», класи CharacterBuilder та CharacterManualBuilder
+
+
+Рисунок Б.11 – Приклад використання шаблону «Будівельник», клас Director
+
+
+Рисунок Б.12 – Приклад використання шаблону «Будівельник», метод Main
+
+
+Рисунок Б.13 – Висновок 
+
+
+Рисунок Б.14 – Подяка за перегляд презентації
+
+
+Рисунок Б.15 – Список використаних джерел
+
+
+     ДОДАТОК В
+     Програмний код
+     Приклад неправильного коду:
+     
+      1  class Character
+      2  {
+      3      public string CharacterClass { get; set; } = null!;
+      4      public string Weapon { get; set; } = null!;
+      5      public int Health { get; set; }
+      6      public string SpecialAbility { get; set; } = null!;
+      7  
+      8      public void ShowInfo()
+      9      {
+      10          Console.WriteLine(@$"Character: {CharacterClass}, Weapon: {Weapon}, 
+      11              Health: {Health}, Special Ability: {SpecialAbility}");
+      12      }
+      13  }
+      14  
+      15  class CharacterManual
+      16  {
+      17      public string Description { get; set; } = null!;
+      18  
+      19      public void AddInfo(string info) => Description += info + "\n";
+      20      public void ShowManual() => Console.WriteLine("Character Manual:\n" + Description);
+      21  }
+      22  
+      23  class Program
+      24  {
+      25      static void Main()
+      26      {
+      27          Console.WriteLine("Your character:");
+      28          Character warrior = new Character();
+      29          warrior.CharacterClass = "Warrior";
+      30          warrior.Weapon = "Sword";
+      31          warrior.Health = 150;
+      32          warrior.SpecialAbility = "Shield Block";
+      33          warrior.ShowInfo();
+      34          Console.WriteLine("\nAll characters:");
+      35          CharacterManual warriorManual = new CharacterManual();
+      36          warriorManual.AddInfo("Class: Warrior");
+      37          warriorManual.AddInfo("Weapon: Sword");
+      38          warriorManual.AddInfo("Health: 150");
+      39          warriorManual.AddInfo("Special Ability: Shield Block");
+      40          warriorManual.ShowManual();
+      41  
+      42          CharacterManual mageManual = new CharacterManual();
+      43          mageManual.AddInfo("Class: Mage");
+      44          mageManual.AddInfo("Weapon: Staff");
+      45          mageManual.AddInfo("Health: 80");
+      46          mageManual.AddInfo("Special Ability: Fireball");
+      47          mageManual.ShowManual();
+      49      }
+      50  }
+     
+     Приклад правильного коду з використанням шаблону «Будівельник»:
+     
+      1  class Character
+      2  {
+      3      public string CharacterClass { get; set; } = null!;
+      4      public string Weapon { get; set; } = null!;
+      5      public int Health { get; set; }
+      6      public string SpecialAbility { get; set; } = null!;
+      7  
+      8      public void ShowInfo()
+      9      {
+      10          Console.WriteLine(@$"Character: {CharacterClass}, Weapon: {Weapon}, 
+      11              Health: {Health}, Special Ability: {SpecialAbility}");
+      12      }
+      13  }
+      14  
+      15  class CharacterManual
+      16  {
+      17      public string Description { get; set; } = null!;
+      18  
+      19      public void AddInfo(string info) => Description += info + "\n";
+      20      public void ShowManual() => Console.WriteLine("Character Manual:\n" + Description);
+      21  }
+      22  
+      23  public class CharacterBuilder : ICharacterBuilder
+      24  {
+      25      private Character _character = new Character();
+      26      public void Reset() => _character = new Character();
+      27      public void SetClass(string characterClass) => _character.CharacterClass = characterClass;
+      28      public void SetWeapon(string weapon) => _character.Weapon = weapon;
+      29      public void SetHealth(int health) => _character.Health = health;
+      30      public void SetSpecialAbility(string ability) => _character.SpecialAbility = ability;
+      31      public Character GetResult() => _character;
+      32  }
+      33  
+      34  public class CharacterManualBuilder : ICharacterBuilder
+      35  {
+      36      private CharacterManual _manual = new CharacterManual();
+      37      public void Reset() => _manual = new CharacterManual();
+      38      public void SetClass(string characterClass) => _manual.AddInfo($"Class: {characterClass}");
+      39      public void SetWeapon(string weapon) => _manual.AddInfo($"Weapon: {weapon}");
+      40      public void SetHealth(int health) => _manual.AddInfo($"Health: {health}");
+      41      public void SetSpecialAbility(string ability) => _manual.AddInfo($"Special Ability: {ability}");
+      42      public CharacterManual GetResult() => _manual;
+      43  }
+      44  
+      45  public class Director
+      46  {
+      47      public void ConstructWarrior(ICharacterBuilder builder)
+      48      {
+      49          builder.Reset();
+      50          builder.SetClass("Warrior");
+      51          builder.SetWeapon("Sword");
+      52          builder.SetHealth(150);
+      53          builder.SetSpecialAbility("Shield Block");
+      54      }
+      55  
+      56      public void ConstructMage(ICharacterBuilder builder)
+      57      {
+      58          builder.Reset();
+      59          builder.SetClass("Mage");
+      60          builder.SetWeapon("Staff");
+      61          builder.SetHealth(80);
+      62          builder.SetSpecialAbility("Fireball");
+      63      }
+      64  }
+      65  
+      66  class Program
+      67  {
+      68      static void Main()
+      69      {
+      70          Console.WriteLine("Your character:");
+      71  
+      72          Director director = new Director();
+      73  
+      74          CharacterBuilder characterBuilder = new CharacterBuilder();
+      75          director.ConstructWarrior(characterBuilder);
+      76          Character warrior = characterBuilder.GetResult();
+      77          warrior.ShowInfo();
+      78  
+      79          Console.WriteLine("\nAll characters:");
+      80  
+      81          CharacterManualBuilder manualBuilder = new CharacterManualBuilder();
+      82          director.ConstructWarrior(manualBuilder);
+      83          CharacterManual warriorManual = manualBuilder.GetResult();
+      84          warriorManual.ShowManual();
+      85  
+      86          manualBuilder.Reset();
+      87          director.ConstructMage(manualBuilder);
+      88          CharacterManual mageManual = manualBuilder.GetResult();
+      89          mageManual.ShowManual();
+      90      }
+      91  }
