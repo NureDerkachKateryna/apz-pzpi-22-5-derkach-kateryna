@@ -1,5 +1,5 @@
 # apz-pzpi-22-5-derkach-kateryna
-PI-22-5  
+PZPI-22-5  
 Kateryna Derkach  
 Патерн (шаблон) проєктування ПЗ "Будівельник"  
 Архітектура програмного забезпечення Netflix  
